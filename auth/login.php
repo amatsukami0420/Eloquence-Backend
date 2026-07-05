@@ -7,7 +7,7 @@ if (isset($data['email']) && isset($data['password'])) {
     $email = $data['email'];
     $password = $data['password'];
 
-    $stmt = $conn->prepare("SELECT id, name, email, password, role FROM members WHERE email = ?");
+    $stmt = $conn->prepare("SELECT id, name, email, phone, password, role FROM members WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
